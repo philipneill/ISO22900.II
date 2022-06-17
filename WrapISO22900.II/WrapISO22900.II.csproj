@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	  <RuntimeIdentifier>win-x86</RuntimeIdentifier>
 	 <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>warnings</Nullable>
     <RootNamespace>$(MSBuildProjectName.Replace("Wrap", "").Replace(" ", "_"))</RootNamespace>
@@ -21,6 +22,10 @@
 	<RepositoryUrl>https://github.com/DiagProf/ISO22900.II/tree/master/WrapISO22900.II</RepositoryUrl>
 	<PackageReadmeFile>READMEForNuGet.md</PackageReadmeFile>
 	<PackageReleaseNotes>beta (works and will be expanded with additional functions soon)</PackageReleaseNotes>
+	<Platforms>AnyCPU;x86</Platforms>
+	<PlatformTarget>x86</PlatformTarget>
+	<AnalysisLevel>6.0-all</AnalysisLevel>
+	<IsPublishable>False</IsPublishable>
    </PropertyGroup>
 
 	<ItemGroup>
@@ -31,6 +36,21 @@
 		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
 			<_Parameter1>$(AssemblyName).Test</_Parameter1>
 		</AssemblyAttribute>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
