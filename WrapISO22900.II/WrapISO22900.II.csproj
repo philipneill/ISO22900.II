@@ -21,6 +21,7 @@
 	<RepositoryUrl>https://github.com/DiagProf/ISO22900.II/tree/master/WrapISO22900.II</RepositoryUrl>
 	<PackageReadmeFile>READMEForNuGet.md</PackageReadmeFile>
 	<PackageReleaseNotes>beta (works and will be expanded with additional functions soon)</PackageReleaseNotes>
+	<Platforms>AnyCPU;x86;x64</Platforms>
    </PropertyGroup>
 
 	<ItemGroup>
